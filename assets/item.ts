@@ -424,32 +424,33 @@ export const HeaderItems = [
     value: "",
   },
   {
-    label: "Nhà Phố",
-    value: "chuyen-muc/thiet-ke-nha-pho",
+    label: "Giới Thiệu",
+    value: "gioi-thieu",
   },
   {
-    label: "Biệt Thự",
-    value: "chuyen-muc/thiet-ke-biet-thu",
+    label: "Đặt xe đi tỉnh",
+    value: "dat-xe-di-tinh",
   },
   {
-    label: "Nội Thất",
-    value: "chuyen-muc/thiet-ke-noi-that",
+    label: "Đặt xe hợp đồng",
+    value: "dat-xe-hop-dong",
   },
   {
-    label: "Dịch Vụ",
-    value: "chuyen-muc/dich-vu-thiet-ke-thi-cong",
+    label: "Bảng giá",
+    value: "bang-gia",
   },
   {
-    label: "Tin tức",
-    value: "chuyen-muc/tin-tuc-xay-dung",
+    label: "Dịch vụ",
+    value: "dich-vu",
+  },
+
+  {
+    label: "Hướng dẫn",
+    value: "huong-dan",
   },
   {
     label: "Liên hệ",
     value: "lien-he",
-  },
-  {
-    label: "Khai toán",
-    value: "khai-toan",
   },
 ];
 
