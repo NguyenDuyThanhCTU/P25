@@ -97,7 +97,7 @@ const Posts = ({ Data, Category }: ProductCategoryProps) => {
           <CRUDButton
             Clicked={setIsOpenAddTypeModal}
             Label="Thêm"
-            value="loại bài viết"
+            value="bài viết"
             Style="hover:bg-orange-900 bg-orange-700"
           />
         </div>

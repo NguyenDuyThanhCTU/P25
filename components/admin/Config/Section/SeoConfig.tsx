@@ -164,7 +164,7 @@ const SeoConfig = ({ Data }: any) => {
                   Từ khóa SEO:
                 </div>
                 <div className="col-span-6 pl-2 py-2 flex flex-wrap gap-2">
-                  {Data?.Keyword.map((item: any, idx: number) => (
+                  {Data?.Keyword?.map((item: any, idx: number) => (
                     <div key={idx} className="border bg-slate-200 rounded-full">
                       <div className="w-max py-1 px-3">{item}</div>
                     </div>

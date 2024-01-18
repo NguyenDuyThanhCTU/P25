@@ -77,7 +77,8 @@ import { GoGitBranch } from "react-icons/go";
 interface IconMappingType {
   [key: string]: IconType;
 }
-
+export const WebsiteUrl = "https://grabcantho.vn";
+export const DB_URL = "grabcantho-1a220";
 export const IconMapping: IconMappingType = {
   IoFlashOutline: IoFlashOutline,
   MdManageAccounts: MdManageAccounts,
@@ -436,11 +437,11 @@ export const HeaderItems = [
     value: "dat-xe-hop-dong",
   },
   {
-    label: "Bảng giá",
+    label: "Bảng Giá",
     value: "bang-gia",
   },
   {
-    label: "Dịch vụ",
+    label: "Dịch Vụ",
     value: "dich-vu",
   },
 
@@ -518,6 +519,52 @@ export const PolicyItems = [
   {
     label: "Chính sách bảo mật",
     value: "chinh-sach-bao-mat",
+  },
+];
+
+export const ProductTypeItems = [
+  {
+    label: "First Parent",
+    value: "first-parent",
+  },
+  {
+    label: "Second Parent",
+    value: "second-parent",
+  },
+  {
+    label: "Third Parent",
+    value: "third-parent",
+  },
+  {
+    label: "Fourth Parent",
+    value: "fourth-parent",
+  },
+  {
+    label: "Fifth Parent",
+    value: "fifth-parent",
+  },
+  {
+    label: "Sixth Parent",
+    value: "sixth-parent",
+  },
+];
+
+export const PostsTypeItems = [
+  {
+    label: "Tin tức",
+    value: "Tin tức",
+  },
+  {
+    label: "Dịch Vụ",
+    value: "Dịch Vụ",
+  },
+  {
+    label: "Bảng Giá",
+    value: "Bảng Giá",
+  },
+  {
+    label: "Chính sách",
+    value: "Chính sách",
   },
 ];
 

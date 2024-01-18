@@ -10,9 +10,10 @@ export const metadata: Metadata = {
   description: "Trần Húy - Nha khoa thẩm mỹ uy tín tại Cần Thơ",
 };
 
-const ServicePage = async () => {
+const ServiceSlugLayout = async ({ params }: { params: { slug: string } }) => {
   const PostCategory = await find("Posts");
-  const Data = PostCategory.filter((item: any) => item.level0 === "dich-vu");
+
+  const Data = PostCategory.filter((item: any) => item.level1 === params.slug);
   return (
     <div className="w-[1200px] mx-auto grid grid-cols-7 py-10 gap-5 min-h-screen">
       <div className="border h-max border-gray-400 d:block p:hidden col-span-2">
@@ -23,7 +24,7 @@ const ServicePage = async () => {
           <NewPosts Data={PostCategory} />
         </div>
       </div>
-      <Posts Data={Data} Title="Dịch Vụ" />
+      <Posts Data={Data} />
       <div className="border h-max border-gray-400 p:col-auto d:col-span-2 d:hidden p:block">
         <div className="p-3 ">
           <h2 className="text-[20px] uppercase text-center pb-2 border-b border-black">
@@ -36,4 +37,4 @@ const ServicePage = async () => {
   );
 };
 
-export default ServicePage;
+export default ServiceSlugLayout;

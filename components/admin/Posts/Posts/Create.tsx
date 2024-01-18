@@ -30,9 +30,9 @@ const Create = ({ setIsOpen, Data, pid, Type, id }: CreateProps) => {
   useEffect(() => {
     let sortedData = Data.filter((item) => item.title === FormData?.level0);
 
-    let formattedArray = sortedData.map((item) => ({
+    let formattedArray = sortedData?.map((item) => ({
       label: item.level1,
-      value: slugify(item.level1, {
+      value: slugify(item?.level1 ? item?.level1 : "", {
         lower: true,
         locale: "vi",
       }),
@@ -58,6 +58,7 @@ const Create = ({ setIsOpen, Data, pid, Type, id }: CreateProps) => {
     setFormData({ ...FormData, keyword: newKeyword });
   };
   const router = useRouter();
+  console.log(pid);
   const HandleSubmit = async () => {
     const level0 = slugify(`${FormData?.level0}`, {
       lower: true,
@@ -71,7 +72,7 @@ const Create = ({ setIsOpen, Data, pid, Type, id }: CreateProps) => {
         router.refresh();
       });
     } else {
-      await insertAndCustomizeId("Posts", Data, `${100000000000 + pid}`).then(
+      await insertAndCustomizeId("Posts", Data, `${100000000001 + pid}`).then(
         () => {
           setIsOpen(false);
           router.refresh();
@@ -252,7 +253,7 @@ const Create = ({ setIsOpen, Data, pid, Type, id }: CreateProps) => {
                             <div
                               className="text-[20px]  cursor-pointer duration-300 hover:text-blue-500"
                               onClick={() => {
-                                if (FormData.keyword === undefined) {
+                                if (FormData?.keyword === undefined) {
                                   setFormData({
                                     ...FormData,
                                     keyword: [Keyword],

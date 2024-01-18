@@ -3,10 +3,12 @@ import { HeaderItems } from "@assets/item";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaCaretDown, FaSearch } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+import HeaderDropDown from "./Items/HeaderDropDown";
 
-const Header = () => {
+const Header = ({ PostCategory, ProductCategory }: any) => {
+  console.log(PostCategory, ProductCategory);
   const [search, setSearch] = useState("");
   const [searchRs, setSearchRs] = useState([]);
   return (
@@ -49,15 +51,32 @@ const Header = () => {
           <div className="bg-[#283037]">
             <div className="w-[1200px] mx-auto  text-white uppercase text-[13px] font-normal flex justify-between ">
               <div className="flex items-center ">
-                {HeaderItems.map((item, index) => (
-                  <Link
-                    href={`/${item.value}`}
-                    className="py-2 px-3 flex items-center hover:bg-mainColor cursor-pointer w-max "
-                    key={index}
-                  >
-                    <p className="w-max">{item.label}</p>
-                  </Link>
-                ))}
+                {HeaderItems.map((item, index) => {
+                  const PostDropdown = PostCategory?.filter(
+                    (items: any) => items.title === item.label
+                  );
+                  const ProductDropdown = ProductCategory?.filter(
+                    (items: any) => items.title === item.label
+                  );
+                  return (
+                    <div key={index} className="relative group/main">
+                      <Link
+                        href={`/${item.value}`}
+                        className="py-2 px-3 flex items-center hover:bg-mainColor cursor-pointer w-max "
+                        key={index}
+                      >
+                        <p className="w-max">{item.label}</p>
+                        {(PostDropdown?.length > 0 ||
+                          ProductDropdown?.length > 0) && (
+                          <FaCaretDown className="text-[20px]  " />
+                        )}
+                      </Link>
+                      {PostDropdown?.length > 0 && (
+                        <HeaderDropDown ServiceItem={PostDropdown} />
+                      )}
+                    </div>
+                  );
+                })}
               </div>
               <div>
                 <div>
