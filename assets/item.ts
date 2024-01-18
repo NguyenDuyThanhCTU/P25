@@ -445,8 +445,8 @@ export const HeaderItems = [
   },
 
   {
-    label: "Hướng dẫn",
-    value: "huong-dan",
+    label: "Tin tức",
+    value: "tin-tuc",
   },
   {
     label: "Liên hệ",

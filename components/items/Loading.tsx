@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Spin } from "antd";
 import { useStateProvider } from "@context/StateProvider";
 
-const App: React.FC = () => {
+const Loading: React.FC = () => {
   const { setIsLoading, isLoading } = useStateProvider();
   const [spinning, setSpinning] = React.useState<boolean>(false);
 
@@ -28,4 +28,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Loading;
