@@ -70,7 +70,6 @@ const ContactConfig = ({ Data }: any) => {
 
   const extractSrc = (embedCode: string) => {
     // Kiểm tra xem embedCode có tồn tại không
-    console.log(embedCode);
     if (!embedCode) {
       return null;
     }

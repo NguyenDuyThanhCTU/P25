@@ -18,7 +18,6 @@ const UpdateIndex = ({ Data, HandleForm }: UpdateIndexProps) => {
 
   const HandleSaleForm = (e: any) => {
     e.preventDefault();
-    console.log(FormData);
     // const From: startpoint, endpoint
   };
 

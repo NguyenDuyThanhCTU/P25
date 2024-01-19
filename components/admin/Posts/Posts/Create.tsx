@@ -58,7 +58,7 @@ const Create = ({ setIsOpen, Data, pid, Type, id }: CreateProps) => {
     setFormData({ ...FormData, keyword: newKeyword });
   };
   const router = useRouter();
-  console.log(pid);
+
   const HandleSubmit = async () => {
     const level0 = slugify(`${FormData?.level0}`, {
       lower: true,

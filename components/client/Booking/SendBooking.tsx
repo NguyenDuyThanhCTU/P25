@@ -31,7 +31,7 @@ const SendBooking = () => {
     }
   };
   return (
-    <div className="grid grid-cols-5 gap-5">
+    <div className="grid p:grid-cols-1 d:grid-cols-5 gap-5">
       <div className="col-span-2">
         <div className="border border-green-600 bg-gray-100">
           <div className="p-3">
@@ -93,9 +93,9 @@ const SendBooking = () => {
                             setTrip({ ...Trip, service: e.target.value })
                           }
                         >
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
+                          <option value="1">1 Chiều</option>
+                          <option value="2">2 Chiều xe ở lại phục vụ</option>
+                          <option value="3">2 Chiều đưa đi đón về</option>
                         </select>
                       </div>
                     </div>
@@ -113,9 +113,10 @@ const SendBooking = () => {
                             setTrip({ ...Trip, type: e.target.value })
                           }
                         >
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
+                          <option value="1">Xe 4 Chỗ</option>
+                          <option value="2">Xe 7 Chỗ</option>
+                          <option value="3">Xe 16 Chỗ</option>
+                          <option value="4">Xe Honda</option>
                         </select>
                       </div>
                     </div>

@@ -523,30 +523,8 @@ export const PolicyItems = [
 ];
 
 export const ProductTypeItems = [
-  {
-    label: "First Parent",
-    value: "first-parent",
-  },
-  {
-    label: "Second Parent",
-    value: "second-parent",
-  },
-  {
-    label: "Third Parent",
-    value: "third-parent",
-  },
-  {
-    label: "Fourth Parent",
-    value: "fourth-parent",
-  },
-  {
-    label: "Fifth Parent",
-    value: "fifth-parent",
-  },
-  {
-    label: "Sixth Parent",
-    value: "sixth-parent",
-  },
+  { label: "Đặt xe đi tỉnh", value: "Đặt xe đi tỉnh" },
+  { label: "Đặt xe hợp đồng", value: "Đặt xe hợp đồng" },
 ];
 
 export const PostsTypeItems = [

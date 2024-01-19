@@ -1,25 +1,55 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ Data }: any) => {
+  const router = useRouter();
   return (
     <div className="bg-[#283037]">
-      <div className="w-[1200px] mx-auto grid grid-cols-2 py-10 text-white font-normal">
+      <div className="d:w-[1200px] p:mx-auto mx-auto grid p:grid-cols-1 gap-5 d:grid-cols-2 py-10 text-white font-normal">
         <div className="flex flex-col gap-5">
           <h2>THÔNG TIN LIÊN HỆ</h2>
           <div className="h-1 rounded-full w-[100px] bg-white"></div>
           <ul className="flex flex-col gap-1 font-extralight">
-            <li> ĐẶT XE ĐI TỈNH | TAXI ĐƯỜNG DÀI 24H</li>
-            <li> CN HCM: Q. Bình Thạnh, TP. Hồ Chí Minh</li>
-            <li> CN Miền Tây: Chợ Ba Se Phong Điền, Cần Thơ</li>
-            <li> CN Miền Đông: Vòng Xoay Ngã Tư Đồng Xoài, Bình Phước</li>
-            <li> Hotline: 038.6019.486 (Zalo)</li>
+            <li className="uppercase font-normal">Đặt xe hợp đồng</li>
+            <li>
+              {" "}
+              <strong>ĐC:</strong> {Data?.CompanyAddress}
+            </li>
+            <li>
+              {" "}
+              <strong> Hotline: </strong>
+              <span
+                className="hover:underline hover:text-blue-500"
+                onClick={() => router.push(`https://zalo.me/${Data?.Hotline}`)}
+              >
+                {" "}
+                {Data?.Hotline}
+              </span>{" "}
+              (Zalo)
+            </li>
+            <li>
+              {" "}
+              <strong>Email:</strong> {Data?.Email}
+            </li>
+            <li className="flex gap-2">
+              {" "}
+              <strong>Thời gian hoạt động:</strong>{" "}
+              <div>
+                {Data?.CompanyTime} (Công Ty) <br />
+                {Data.WebsiteTime} (Website)
+              </div>
+            </li>
+            <li>
+              {" "}
+              <strong>CSKH:</strong> {Data?.PhoneNumber}
+            </li>
           </ul>
         </div>
         <div className="grid grid-cols-2">
           <div className="flex flex-col gap-5">
-            <h2>THÔNG TIN LIÊN HỆ</h2>
+            <h2 className="uppercase">Hỗ trợ khách hàng</h2>
             <div className="h-1 rounded-full w-[100px] bg-white"></div>
             <ul className="flex flex-col gap-1 font-extralight">
               <li>Đặt xe sân bay</li>

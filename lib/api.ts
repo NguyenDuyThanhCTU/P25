@@ -62,7 +62,7 @@ export const insertAndCustomizeId = async (
   }
 };
 
-export const findById = async (Collection: string, Id: string) => {
+export const findById = async (Collection: string, Id: any) => {
   let firebaseEndpoint = `https://firestore.googleapis.com/v1/projects/${DB_URL}/databases/(default)/documents/${Collection}/${Id}`;
 
   try {

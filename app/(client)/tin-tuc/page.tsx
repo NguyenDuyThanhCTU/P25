@@ -6,15 +6,14 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Trang Chủ - Nha khoa thẩm mỹ Trần Húy",
-  description: "Trần Húy - Nha khoa thẩm mỹ uy tín tại Cần Thơ",
+  title: "Grab An Phát Cần Thơ",
+  description: "An Phát - Hợp Tác Xã Dịch Vụ Vận Tải Cần Thơ ",
 };
-
 const ContactPage = async () => {
   const PostCategory = await find("Posts");
   const Data = PostCategory.filter((item: any) => item.level0 === "tin-tuc");
   return (
-    <div className="w-[1200px] mx-auto grid grid-cols-7 py-10 gap-5 min-h-screen">
+    <div className="d:w-[1200px] p:mx-auto mx-auto grid p:grid-cols-1  d:grid-cols-7 py-10 gap-5 min-h-screen">
       <div className="border h-max border-gray-400 d:block p:hidden col-span-2">
         <div className="p-3 ">
           <h2 className="text-[20px] uppercase text-center pb-2 border-b border-black">

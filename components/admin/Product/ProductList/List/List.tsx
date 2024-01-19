@@ -61,7 +61,7 @@ export const Button = ({ Label, Style, Clicked }: ButtonProps) => {
   );
 };
 
-const ListProduct = () => {
+const ListProduct = ({ Data, Category }: any) => {
   const [isOpenProductModal, setIsOpenProductModal] = useState<boolean>(false);
   const [isOpenEdit, setIsOpenEdit] = useState<boolean>(false);
   const [isOpenAdd, setIsOpenAdd] = useState<boolean>(false);
@@ -109,61 +109,9 @@ const ListProduct = () => {
       value: "bestseller",
     },
   ];
-  const productItem = [
-    {
-      stt: 1,
-      pid: "1215",
-      title: "Áo thun nam",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/lachmarket-34ace.appspot.com/o/products%2F48e1f92a03a2a0fdb3c771645c7714aa.jpg_720x720q80.jpg?alt=media&token=dc625438-4630-4617-b093-8136d3743716",
-      price: "200.000",
-      view: 200,
-      time: "10/10/2021",
-    },
-    {
-      stt: 2,
-      pid: "1216",
-      title: "Áo thun nữ",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/lachmarket-34ace.appspot.com/o/products%2F48e1f92a03a2a0fdb3c771645c7714aa.jpg_720x720q80.jpg?alt=media&token=dc625438-4630-4617-b093-8136d3743716",
-      price: "200.000",
-      view: 500,
-      time: "10/10/2021",
-    },
-    {
-      stt: 3,
-      pid: "1217",
-      title: "Áo thun trẻ em",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/lachmarket-34ace.appspot.com/o/products%2F48e1f92a03a2a0fdb3c771645c7714aa.jpg_720x720q80.jpg?alt=media&token=dc625438-4630-4617-b093-8136d3743716",
-      price: "200.000",
-      view: 100,
-      time: "10/10/2021",
-    },
-    {
-      stt: 4,
-      pid: "1218",
-      title: "Áo thun nam",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/lachmarket-34ace.appspot.com/o/products%2F48e1f92a03a2a0fdb3c771645c7714aa.jpg_720x720q80.jpg?alt=media&token=dc625438-4630-4617-b093-8136d3743716",
-      price: "200.000",
-      view: 200,
-      time: "10/10/2021",
-    },
-    {
-      stt: 5,
-      pid: "1219",
-      title: "Áo thun nam",
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/lachmarket-34ace.appspot.com/o/products%2F48e1f92a03a2a0fdb3c771645c7714aa.jpg_720x720q80.jpg?alt=media&token=dc625438-4630-4617-b093-8136d3743716",
-      price: "200.000",
-      view: 200,
-      time: "10/10/2021",
-    },
-  ];
 
   const HandleSelectProduct = (id: string) => {
-    const sort = productItem?.filter((item) => item.pid === id);
+    const sort = Data?.filter((item: any) => item.pid === id);
     setSelectedProductData(sort[0]);
     setIsOpenProductModal(true);
   };
@@ -171,7 +119,6 @@ const ListProduct = () => {
   const HandleUpdateIndexForm = (e: any) => {
     e.preventDefault();
     //regex
-    console.log(FormData);
   };
 
   return (
@@ -252,7 +199,7 @@ const ListProduct = () => {
             ))}
           </div>
           <div>
-            {productItem.map((item, idx) => (
+            {Data.map((item: any, idx: any) => (
               <div
                 className="grid grid-cols-8 border-b py-3 cursor-pointer hover:bg-slate-100"
                 key={idx}
@@ -455,15 +402,23 @@ const ListProduct = () => {
         </Drawer>
 
         {/* thêm sản phẩm */}
-        <Drawer
-          title="Thêm mới sản phẩm"
-          footer={null}
-          open={isOpenAdd}
-          width={700}
-          onClose={() => setIsOpenAdd(false)}
-        >
-          <CreateProduct />
-        </Drawer>
+        <>
+          <Modal
+            footer={null}
+            title="Thêm bài viết"
+            open={isOpenAdd}
+            width={1200}
+            onCancel={() => setIsOpenAdd(false)}
+            destroyOnClose={true}
+            afterClose={() => setFormData({})}
+          >
+            <CreateProduct
+              Category={Category}
+              setIsOpen={setIsOpenAdd}
+              pid={Data.length}
+            />
+          </Modal>
+        </>
         {/* xóa sản phẩm */}
         <Drawer
           footer={null}

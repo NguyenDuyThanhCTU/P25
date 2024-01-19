@@ -20,7 +20,7 @@ const Create = ({ setIsOpen }: any) => {
       });
     }
 
-    await insertOne("ProductTypes", FormData).then(() => {
+    await insertOne("ProductCategory", FormData).then(() => {
       setIsOpen(false);
       router.refresh();
     });
@@ -38,7 +38,7 @@ const Create = ({ setIsOpen }: any) => {
       value: "topic",
     },
   ];
-  console.log(FormData);
+
   return (
     <div>
       <form

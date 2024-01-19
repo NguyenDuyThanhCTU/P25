@@ -1,7 +1,10 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Notification from "./Home/Notification";
 import ReportCard from "@components/items/server-items/ReportCard";
+import { useAuth } from "@context/AuthProviders";
+import { ParticlesCustom } from "@components/login/Items/ParticlesCustom";
+import ClientLogin from "@components/login/ClientLogin";
 
 const AdminPage = () => {
   const FunctionItem = [
@@ -96,46 +99,72 @@ const AdminPage = () => {
         "https://firebasestorage.googleapis.com/v0/b/adminads-11c80.appspot.com/o/branch.png?alt=media&token=86a20ee2-6e06-4e7d-84fb-412f89177ca0",
     },
   ];
+  const { verify } = useAuth();
+
   return (
     <div>
-      <div className="w-[1200px] mx-auto flex flex-col gap-5">
-        <div className="grid grid-cols-4 gap-3">
-          <ReportCard Label="Tổng Số Sản Phẩm" Value={255} />
-          <ReportCard Label="Tổng Số Tin Tức" />
-          <ReportCard Label="Tổng Số Truy Cập" />
-          <ReportCard Label="Tổng Số Thông Báo" />
-        </div>
-        <div className="py-5 grid grid-cols-8 gap-10 ">
-          <div className="col-span-2">
-            <Notification />
-          </div>
-          <div className="grid grid-cols-4 gap-5 w-full col-span-6">
-            {FunctionItem.map((item: any, idx: number) => (
-              <div
-                key={idx}
-                className="grid grid-rows-3  justify-center p-2 items-center gap-2 border cursor-pointer hover:bg-[#F2F2F2] duration-300"
-              >
-                <div className="row-span-2 h-full w-full justify-center items-center flex">
-                  <div className="h-[80px] w-[80px] relative  ">
-                    <Image
-                      src={item.image}
-                      alt={item.label}
-                      fill
-                      style={{
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                </div>
+      {verify ? (
+        <>
+          <div className="d:w-[1200px] p:mx-auto mx-auto flex flex-col gap-5">
+            <div className="grid grid-cols-4 gap-3">
+              <ReportCard Label="Tổng Số Sản Phẩm" Value={255} />
+              <ReportCard Label="Tổng Số Tin Tức" />
+              <ReportCard Label="Tổng Số Truy Cập" />
+              <ReportCard Label="Tổng Số Thông Báo" />
+            </div>
+            <div className="py-5 grid grid-cols-8 gap-10 ">
+              <div className="col-span-2">
+                <Notification />
+              </div>
+              <div className="grid grid-cols-4 gap-5 w-full col-span-6">
+                {FunctionItem.map((item: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className="grid grid-rows-3  justify-center p-2 items-center gap-2 border cursor-pointer hover:bg-[#F2F2F2] duration-300"
+                  >
+                    <div className="row-span-2 h-full w-full justify-center items-center flex">
+                      <div className="h-[80px] w-[80px] relative  ">
+                        <Image
+                          src={item.image}
+                          alt={item.label}
+                          fill
+                          style={{
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
+                    </div>
 
-                <div className="text-center font-light text-[18px]">
-                  {item.label}
+                    <div className="text-center font-light text-[18px]">
+                      {item.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          {" "}
+          <ParticlesCustom />
+          <div className="bg-[rgba(0,0,0,0.3)] w-full h-full z-50 absolute">
+            <div className="d:w-[880px] p:w-[90vw] h-[529px] absolute  bg-white bottom-[25%] p:left-[5%] d:left-[30%] flex font-LexendDeca cursor-pointer rounded-sm -z-10">
+              <ClientLogin />
+
+              <div className="d:flex flex-1 p:hidden ">
+                <div className="overflow-hidden h-full">
+                  <img
+                    src="https://vieclam24h.vn/img/loginv2/bg-register.png"
+                    alt=""
+                    className="object-contain "
+                  />
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };

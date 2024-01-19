@@ -9,7 +9,6 @@ const Create = ({ setIsOpenContactModal }: any) => {
   const router = useRouter();
   const HandleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(FormData);
     // await UpdateDataProps("Config", "contact", FormData).then(() => {
     //   setIsOpenContactModal(false);
     //   router.refresh();

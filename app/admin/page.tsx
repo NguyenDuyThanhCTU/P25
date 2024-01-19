@@ -28,7 +28,12 @@ const AdminHomePage = async ({
       componentToRender = <ConfigPage Data={ConfigData} />;
       break;
     case "danh-sach-san-pham":
-      componentToRender = <AdminProductList />;
+      const ProductData = await find("Products");
+      const ProductCategory = await find("ProductCategory");
+
+      componentToRender = (
+        <AdminProductList Data={ProductData} Category={ProductCategory} />
+      );
       break;
     case "danh-muc-san-pham":
       const Type = await find("ProductCategory");

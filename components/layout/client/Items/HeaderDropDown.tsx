@@ -1,19 +1,26 @@
 import Link from "next/link";
 import React from "react";
 import slugify from "slugify";
+
 const HeaderDropDown = ({ ServiceItem }: any) => {
   return (
     <>
       <div className="flex flex-col top-6 absolute ">
         <div className="bg-none w-full h-6"></div>
-        <div className=" top-9 hidden group-hover/main:block duration-300 bg-gray-50    ">
-          <div className=" flex flex-col bg-[#3c3c3cae] shadow-md border-t-2 border-gray-500 ">
+        <div className=" top-9 hidden group-hover/main:block duration-300     ">
+          <div className=" flex flex-col bg-white  shadow-md border-t-2 border-gray-500 ">
             {ServiceItem.map((items: any, idx: number) => {
-              const parentSlug = slugify(items.title, {
+              const parentSlug = slugify(
+                items.title ? items.title : items.level0,
+                {
+                  lower: true,
+                  locale: "vi",
+                }
+              );
+              const slug = slugify(items?.level1, {
                 lower: true,
                 locale: "vi",
               });
-              const slug = slugify(items.level1, { lower: true, locale: "vi" });
 
               return (
                 <Link
