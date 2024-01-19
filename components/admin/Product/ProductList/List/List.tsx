@@ -124,8 +124,8 @@ const ListProduct = ({ Data, Category }: any) => {
   return (
     <div className="border rounded-lg bg-white">
       <div className="p-4 font-normal text-gray-700">
-        <div className="flex justify-between">
-          <div className="flex items-center gap-5">
+        <div className="flex justify-between d:flex-row p:flex-col gap-5">
+          <div className="flex items-center gap-5 ">
             <div>
               <h3 className="text-[30px] font-bold">Danh sách sản phẩm</h3>
               <p className="font-light">Tóm tắc ngắn gọn tất cả sản phẩm</p>
@@ -138,7 +138,7 @@ const ListProduct = ({ Data, Category }: any) => {
               />
             </div>
           </div>
-          <div className="flex items-center gap-4 text-[14px]">
+          <div className="flex items-center gap-4 text-[14px] d:flex-row p:flex-col">
             <div className="border rounded-lg ">
               <div className="py-2 px-4 flex items-center gap-2">
                 <div className="cursor-pointer">
@@ -151,31 +151,33 @@ const ListProduct = ({ Data, Category }: any) => {
                 />
               </div>
             </div>
-            <div className="flex items-center gap-1">
-              <PiCardsLight />
-              <p>25 sản phẩm</p>
-            </div>
-            <div className="flex items-center gap-1 text-blue-500">
-              <FaSort />
-              <select
-                className="outline-none pr-10 border-b py-1  bg-gray-100  border-blue-500   "
-                // onChange={(e: any) => filter(e.target.value)}
-              >
-                {sortItem.map((item, idx) => (
-                  <option
-                    key={idx}
-                    className=" font-extralight "
-                    value={item.value}
-                  >
-                    {item.label}
-                  </option>
-                ))}
-              </select>
+            <div className="flex gap-5">
+              <div className="flex items-center gap-1">
+                <PiCardsLight />
+                <p>25 sản phẩm</p>
+              </div>
+              <div className="flex items-center gap-1 text-blue-500">
+                <FaSort />
+                <select
+                  className="outline-none pr-10 border-b py-1  bg-gray-100  border-blue-500   "
+                  // onChange={(e: any) => filter(e.target.value)}
+                >
+                  {sortItem.map((item, idx) => (
+                    <option
+                      key={idx}
+                      className=" font-extralight "
+                      value={item.value}
+                    >
+                      {item.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         </div>
-        <div className="mt-5 text-black">
-          <div className="grid grid-cols-8 border-b-2 border-black py-3">
+        <div className="mt-5 text-black ">
+          <div className="grid grid-cols-8 border-b-2 border-black py-3 ">
             {[
               "STT",
               "Sản phẩm",

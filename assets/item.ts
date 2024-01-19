@@ -231,7 +231,7 @@ export const AdminPageHeaderItems = [
   },
   {
     label: "Sản Phẩm",
-    value: "san-pham",
+    value: "danh-sach-san-pham",
     icon: "GiStarSattelites",
     children: [
       {
@@ -245,16 +245,16 @@ export const AdminPageHeaderItems = [
         icon: "CiBoxList",
       },
 
-      {
-        label: "Slide giới thiệu",
-        value: "slide-gioi-thieu",
-        icon: "BiSlideshow",
-      },
+      // {
+      //   label: "Slide giới thiệu",
+      //   value: "slide-gioi-thieu",
+      //   icon: "BiSlideshow",
+      // },
     ],
   },
   {
     label: "Bài Viết",
-    value: "bai-viet",
+    value: "danh-sach-bai-viet",
     icon: "BsPostcard",
     children: [
       {
@@ -267,21 +267,21 @@ export const AdminPageHeaderItems = [
         value: "danh-muc-bai-viet",
         icon: "CgListTree",
       },
-      {
-        label: "Điều Khoản Sử Dụng",
-        value: "dieu-khoan-su-dung",
-        icon: "MdPolicy",
-      },
+      // {
+      //   label: "Điều Khoản Sử Dụng",
+      //   value: "dieu-khoan-su-dung",
+      //   icon: "MdPolicy",
+      // },
       {
         label: "Bài giới thiệu",
         value: "bai-gioi-thieu",
         icon: "BsFileEarmarkPost",
       },
-      {
-        label: "Cấu Hình SEO",
-        value: "cau-hinh-seo",
-        icon: "FaChartLine",
-      },
+      // {
+      //   label: "Cấu Hình SEO",
+      //   value: "cau-hinh-seo",
+      //   icon: "FaChartLine",
+      // },
     ],
   },
   {
@@ -289,21 +289,21 @@ export const AdminPageHeaderItems = [
     value: "truyen-thong",
     icon: "IoShareSocialOutline",
     children: [
-      {
-        label: "Kênh Truyền Thông",
-        value: "kenh-truyen-thong",
-        icon: "PiShareNetworkLight",
-      },
-      {
-        label: "Hình Ảnh",
-        value: "hinh-anh",
-        icon: "IoImagesOutline",
-      },
-      {
-        label: "Video",
-        value: "video",
-        icon: "MdOndemandVideo",
-      },
+      // {
+      //   label: "Kênh Truyền Thông",
+      //   value: "kenh-truyen-thong",
+      //   icon: "PiShareNetworkLight",
+      // },
+      // {
+      //   label: "Hình Ảnh",
+      //   value: "hinh-anh",
+      //   icon: "IoImagesOutline",
+      // },
+      // {
+      //   label: "Video",
+      //   value: "video",
+      //   icon: "MdOndemandVideo",
+      // },
     ],
   },
   {
@@ -311,26 +311,26 @@ export const AdminPageHeaderItems = [
     value: "tai-khoan",
     icon: "MdManageAccounts",
     children: [
-      {
-        label: "Thông Tin Tài Khoản",
-        value: "thong-tin-tai-khoan",
-        icon: "AiOutlineProfile",
-      },
-      {
-        label: "Danh Sách Tài Khoản",
-        value: "danh-sach-tai-khoan",
-        icon: "BiSolidUserAccount",
-      },
-      {
-        label: "Phân Quyền",
-        value: "phan-quyen",
-        icon: "AiOutlineNodeCollapse",
-      },
-      {
-        label: "Lịch Sử Hoạt Động",
-        value: "lich-su-hoat-dong",
-        icon: "MdOutlineHistory",
-      },
+      // {
+      //   label: "Thông Tin Tài Khoản",
+      //   value: "thong-tin-tai-khoan",
+      //   icon: "AiOutlineProfile",
+      // },
+      // {
+      //   label: "Danh Sách Tài Khoản",
+      //   value: "danh-sach-tai-khoan",
+      //   icon: "BiSolidUserAccount",
+      // },
+      // {
+      //   label: "Phân Quyền",
+      //   value: "phan-quyen",
+      //   icon: "AiOutlineNodeCollapse",
+      // },
+      // {
+      //   label: "Lịch Sử Hoạt Động",
+      //   value: "lich-su-hoat-dong",
+      //   icon: "MdOutlineHistory",
+      // },
     ],
   },
   {
@@ -338,27 +338,26 @@ export const AdminPageHeaderItems = [
     value: "bao-cao",
     icon: "TbReport",
     children: [
-      {
-        label: "Lượt Truy Cập",
-        value: "luot-truy-cap",
-        icon: "BiLoader",
-      },
-      {
-        label: "Phản Hồi của Khách Hàng",
-        value: "Phan-hoi-cua-khach-hang",
-        icon: "BiPencil",
-      },
-      {
-        label: "Đơn Hàng",
-        value: "don-hang",
-        icon: "BiCube",
-      },
-
-      {
-        label: "Sản Phẩm Xem Nhiều",
-        value: "san-pham-xem-nhieu",
-        icon: "BiHappy",
-      },
+      // {
+      //   label: "Lượt Truy Cập",
+      //   value: "luot-truy-cap",
+      //   icon: "BiLoader",
+      // },
+      // {
+      //   label: "Phản Hồi của Khách Hàng",
+      //   value: "Phan-hoi-cua-khach-hang",
+      //   icon: "BiPencil",
+      // },
+      // {
+      //   label: "Đơn Hàng",
+      //   value: "don-hang",
+      //   icon: "BiCube",
+      // },
+      // {
+      //   label: "Sản Phẩm Xem Nhiều",
+      //   value: "san-pham-xem-nhieu",
+      //   icon: "BiHappy",
+      // },
     ],
   },
   {
@@ -367,16 +366,16 @@ export const AdminPageHeaderItems = [
     icon: "BiHive",
 
     children: [
-      {
-        label: "Đối tác",
-        value: "doi-tac",
-        icon: "LuGitCompare",
-      },
-      {
-        label: "Chi Nhánh",
-        value: "chi-nhanh",
-        icon: "GoGitBranch",
-      },
+      // {
+      //   label: "Đối tác",
+      //   value: "doi-tac",
+      //   icon: "LuGitCompare",
+      // },
+      // {
+      //   label: "Chi Nhánh",
+      //   value: "chi-nhanh",
+      //   icon: "GoGitBranch",
+      // },
     ],
   },
 ];

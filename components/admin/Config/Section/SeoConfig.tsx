@@ -97,7 +97,7 @@ const SeoConfig = ({ Data }: any) => {
         </div>
       </div>
       <div className="py-5 ">
-        <div className="w-full grid grid-cols-2 px-10 font-light gap-5">
+        <div className="w-full grid p:grid-cols-1 d:grid-cols-2 px-10 font-light gap-5">
           <div className=" mt-3 border border-black shadow-sm bg-white rounded-md  ">
             <div className="p-4 flex flex-col gap-1">
               <div className="flex justify-between items-center">
@@ -221,7 +221,7 @@ const SeoConfig = ({ Data }: any) => {
                     Nội dung file sitemap.xml:
                   </div>
                   <div className="col-span-5 pl-2 py-2 flex gap-2 border rounded-lg border-gray-500 mt-2 bg-slate-100">
-                    <div className="p-2">
+                    <div className="p-2 overflow-auto">
                       {`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
         <loc>https://acme.com</loc>

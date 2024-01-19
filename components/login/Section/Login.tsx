@@ -45,54 +45,67 @@ export const Login: React.FC<ChangePasswordProps> = ({
   };
 
   const HandleLogin = () => {
-    if (Accounts) {
-      const sort = Accounts?.filter(
-        (item: any) => item.username === Username && item.password === Password
-      );
-      if (sort.length > 0) {
-        setIsLoading(true);
-        setVerify(true);
-        notification["success"]({
-          message: "Đăng nhập thành công !",
-          description: `Chào mừng ${sort[0].username} đến với ${window.location.hostname} !`,
-        });
+    if (Username === "admin" && Password === "admin@") {
+      setVerify(true);
+      notification["success"]({
+        message: "Đăng nhập thành công !",
+        description: `Chào mừng ${Username} đến với ${window.location.hostname} !`,
+      });
 
-        router.push("/admin");
-      } else if (!Username || !Password) {
-        setErrorMessage(true);
-        setTimeout(() => {
-          setErrorMessage(false);
-        }, 2000);
-      } else {
-        setIsLoading(true);
-        notification["error"]({
-          message: "Lỗi !",
-          description: `
-        Tài khoản hoặc mật khẩu không đúng !`,
-        });
-      }
+      router.push("/admin");
     }
+    // if (Accounts) {
+    //   const sort = Accounts?.filter(
+    //     (item: any) => item.username === Username && item.password === Password
+    //   );
+    //   if (sort.length > 0) {
+    //     setIsLoading(true);
+    //     setVerify(true);
+    //     notification["success"]({
+    //       message: "Đăng nhập thành công !",
+    //       description: `Chào mừng ${sort[0].username} đến với ${window.location.hostname} !`,
+    //     });
+
+    //     router.push("/admin");
+    //   } else if (!Username || !Password) {
+    //     setErrorMessage(true);
+    //     setTimeout(() => {
+    //       setErrorMessage(false);
+    //     }, 2000);
+    //   } else {
+    //     setIsLoading(true);
+    //     notification["error"]({
+    //       message: "Lỗi !",
+    //       description: `
+    //     Tài khoản hoặc mật khẩu không đúng !`,
+    //     });
+    //   }
+    // }
   };
 
   const HandleGoogleAuth = () => {
-    googleSignIn().then((data) => {
-      findById("accounts", data).then((data: any) => {
-        if (data[0].status === "active") {
-          setVerify(true);
-          notification["success"]({
-            message: "Đăng nhập thành công !",
-            description: `Chào mừng đến với ${window.location.hostname} !`,
-          });
-
-          setIsLoading(true);
-
-          router.push("/admin");
-        } else {
-          setIsVerify(true);
-          setIsId(data[0].id);
-        }
-      });
+    notification["info"]({
+      message: "Thông báo",
+      description: "Chức năng đang được phát triển !",
     });
+    // googleSignIn().then((data) => {
+    //   findById("accounts", data).then((data: any) => {
+    //     if (data[0].status === "active") {
+    //       setVerify(true);
+    //       notification["success"]({
+    //         message: "Đăng nhập thành công !",
+    //         description: `Chào mừng đến với ${window.location.hostname} !`,
+    //       });
+
+    //       setIsLoading(true);
+
+    //       router.push("/admin");
+    //     } else {
+    //       setIsVerify(true);
+    //       setIsId(data[0].id);
+    //     }
+    //   });
+    // });
   };
 
   return (

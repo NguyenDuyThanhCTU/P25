@@ -102,7 +102,7 @@ const Posts = ({ Data, Category }: ProductCategoryProps) => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-5 mt-10 gap-5 min-h-screen">
+      <div className="grid p:grid-cols-1 d:grid-cols-5 mt-10 gap-5 min-h-screen">
         <div className="bg-gray-50 border rounded-lg col-span-3 ">
           <div className="p-3">
             <div className="flex justify-between ">

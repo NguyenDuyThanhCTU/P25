@@ -9,8 +9,8 @@ type ClientAdminLayoutProps = {
 };
 
 const AdminLayout: React.FC<ClientAdminLayoutProps> = ({ children }) => {
-  const { verify } = useAuth();
-
+  // const { verify } = useAuth();
+  const verify = true;
   return (
     <div className="font-LexendDeca font-extralight ">
       {verify ? (

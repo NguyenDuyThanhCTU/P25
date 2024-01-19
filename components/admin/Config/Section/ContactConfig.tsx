@@ -91,7 +91,7 @@ const ContactConfig = ({ Data }: any) => {
 
   return (
     <div className="py-5 border-t  bg-white">
-      <div className="w-full grid grid-cols-2 px-10 font-light gap-5">
+      <div className="w-full grid p:grid-cols-1 d:grid-cols-2 px-10 font-light gap-5">
         <div className="">
           <h1 className="text-[30px] font-semibold">
             Các Thông Tin Liên Hệ Website{" "}

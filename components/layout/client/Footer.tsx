@@ -6,7 +6,7 @@ import React from "react";
 const Footer = ({ Data }: any) => {
   const router = useRouter();
   return (
-    <div className="bg-[#283037]">
+    <div className="bg-[#283037] mt-5">
       <div className="d:w-[1200px] p:mx-auto mx-auto grid p:grid-cols-1 gap-5 d:grid-cols-2 py-10 text-white font-normal">
         <div className="flex flex-col gap-5">
           <h2>THÔNG TIN LIÊN HỆ</h2>
@@ -38,7 +38,7 @@ const Footer = ({ Data }: any) => {
               <strong>Thời gian hoạt động:</strong>{" "}
               <div>
                 {Data?.CompanyTime} (Công Ty) <br />
-                {Data.WebsiteTime} (Website)
+                {Data?.WebsiteTime} (Website)
               </div>
             </li>
             <li>

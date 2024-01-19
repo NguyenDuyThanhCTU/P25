@@ -2,10 +2,10 @@ import ProductCard from "@components/client/Product/ProductCard";
 import { find } from "@lib/api";
 import React from "react";
 
-const DisplayProductPage = async ({ params }: { params: { slug: string } }) => {
+const DisplayProductPage = async () => {
   const FetchData = await find("Products");
   const Data = FetchData.filter(
-    (item: any) => item.level0 === "dat-xe-di-tinh"
+    (item: any) => item.level0 === "dat-xe-hop-dong"
   );
 
   return (
