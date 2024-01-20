@@ -152,7 +152,7 @@ const Header = ({ PostCategory, ProductCategory, Data }: any) => {
       <div className="d:hidden p:block bg-mainNormalBlue ">
         <div className="h-[84px] fixed z-50 w-full top-0 bg-white  text-black shadow-xl">
           <div className="px-4 w-full flex justify-between items-center">
-            <Link href={`/`} className="h-[84px] w-[150px]">
+            <Link href={`/`} className="h-[84px] w-[190px]">
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/grabcantho-1a220.appspot.com/o/Logo.jpg?alt=media&token=3aa10bd0-849a-4d68-940d-6fc4852a87d5"
                 alt="Logo"

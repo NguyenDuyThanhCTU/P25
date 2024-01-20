@@ -25,7 +25,7 @@ const Slide = () => {
         slidesPerView={1}
         slidesPerGroup={1}
         autoplay={{
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -40,7 +40,7 @@ const Slide = () => {
             <div key={idx}>
               {" "}
               <SwiperSlide>
-                <div className="h-[70vh] w-full flex justify-center">
+                <div className="p:h-auto d:h-[70vh] w-full flex justify-center">
                   <img
                     src={item.image}
                     alt="slide"

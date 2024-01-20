@@ -13,6 +13,7 @@ import { TbGridDots } from "react-icons/tb";
 import { Drawer, Modal, Tooltip } from "antd";
 import { RxCross2 } from "react-icons/rx";
 import HeaderDropDown from "./Items/HeaderDropDown";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -89,7 +90,12 @@ const Header = () => {
             </div>
           </div>
           <div>
-            <div className=" p-2  hover:scale-125 duration-300">
+            <div
+              className=" p-2  hover:scale-125 duration-300"
+              onClick={() =>
+                sendGAEvent({ event: "buttonClicked", value: "xyz" })
+              }
+            >
               <PiBellRingingThin />
             </div>
           </div>
@@ -129,8 +135,13 @@ const Header = () => {
                 className="w-full h-full p-2"
               />
             </Link>
-            <div className="text-[25px] " onClick={() => setOpen(true)}>
-              <IoListSharp />
+            <div className="border-2 rounded-xl border-gray-500">
+              <div
+                className="text-[25px] bg-gray-100 p-2 rounded-xl"
+                onClick={() => setOpen(true)}
+              >
+                <IoListSharp />
+              </div>
             </div>
           </div>
           <>

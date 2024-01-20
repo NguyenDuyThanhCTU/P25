@@ -108,9 +108,23 @@ const InputForm = ({
                 >
                   <option>--- Chọn Danh Mục ---</option>
                   {Option.map((item: any, idx: number) => (
-                    <option key={idx} value={item.value}>
-                      {item.label}
-                    </option>
+                    <>
+                      {item.value !== undefined ? (
+                        <>
+                          {" "}
+                          <option key={idx} value={item.value}>
+                            {item.label}
+                          </option>
+                        </>
+                      ) : (
+                        <>
+                          {" "}
+                          <option key={idx} value={item.url}>
+                            {item.title}
+                          </option>
+                        </>
+                      )}
+                    </>
                   ))}
                 </select>
               </div>

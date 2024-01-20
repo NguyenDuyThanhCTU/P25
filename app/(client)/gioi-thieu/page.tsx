@@ -24,7 +24,7 @@ const IntroductionPage = async () => {
         />
       </div>
       <div>
-        <div className="flex flex-col d:w-[1300px] d:mx-auto p:w-auto p:mx-2 py-5">
+        <div className="flex flex-col w-auto p:mx-2 d:mx-10 py-5">
           <div className="border-b pb-2">
             <div className="uppercase font-bold text-[1.5rem] ">
               <div className="hover:text-mainblue before:w-[50px] before:h-[1px] before:inline-block  before:bg-black before:mr-2 text-center cursor-default">

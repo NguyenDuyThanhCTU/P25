@@ -6,7 +6,7 @@ const Introduction = ({ Data }: any) => {
   const markup = { __html: Data?.content };
   return (
     <>
-      <div dangerouslySetInnerHTML={markup} className="text-[18px] "></div>
+      <div dangerouslySetInnerHTML={markup} className="text-[18px]  "></div>
     </>
   );
 };

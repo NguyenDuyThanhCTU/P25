@@ -7,6 +7,9 @@ import ProductCategory from "@components/admin/Product/ProductCategory";
 import AdminProductList from "@components/admin/Product/ProductList";
 import { find, findById, findOne } from "@lib/api";
 import { Metadata } from "next";
+import AdminPage from "@components/admin/AdminPage";
+import SocialMedia from "@components/admin/Comunity/SocialMedia/SocialMedia";
+import Slide from "@components/admin/Comunity/Slide/Slide";
 
 export const metadata: Metadata = {
   title: "...",
@@ -21,18 +24,23 @@ const AdminHomePage = async ({
   const searchValue = searchParams.tab;
 
   let componentToRender;
+  let Products = await find("Products");
+  let Posts = await find("Posts");
 
   switch (searchValue) {
+    case undefined:
+      componentToRender = <AdminPage />;
+
+      break;
     case "cau-hinh":
       const ConfigData = await find("Config");
       componentToRender = <ConfigPage Data={ConfigData} />;
       break;
     case "danh-sach-san-pham":
-      const ProductData = await find("Products");
-      const ProductCategory = await find("ProductCategory");
+      const ProductCategoryTag = await find("ProductCategory");
 
       componentToRender = (
-        <AdminProductList Data={ProductData} Category={ProductCategory} />
+        <AdminProductList Data={Products} Category={ProductCategoryTag} />
       );
       break;
     case "danh-muc-san-pham":
@@ -41,10 +49,10 @@ const AdminHomePage = async ({
       break;
     case "danh-sach-bai-viet":
       const CategoryData = await find("PostCategory");
-      const PostData = await find("Posts");
+
       componentToRender = (
         <Posts
-          Data={PostData ? PostData : []}
+          Data={Posts ? Posts : []}
           Category={CategoryData ? CategoryData : []}
         />
       );
@@ -67,6 +75,14 @@ const AdminHomePage = async ({
           }
         />
       );
+      break;
+    case "slide-gioi-thieu":
+      const SlideData = await find("Slide");
+      componentToRender = <Slide Data={SlideData} />;
+      break;
+    case "kenh-truyen-thong":
+      const SocialMediaData = await findById("Config", "SocialMedia");
+      componentToRender = <SocialMedia Data={SocialMediaData} />;
       break;
 
     default:
