@@ -68,9 +68,7 @@ const Slide = ({ Data }: any) => {
                         item === "Đối tượng liên kết" || item === "Liên kết"
                           ? "col-span-2 justify-start"
                           : "justify-center col-span-1"
-                      }
-      flex  w-full
-      `}
+                      }flex  w-full`}
                     >
                       {item}
                     </div>
@@ -79,10 +77,7 @@ const Slide = ({ Data }: any) => {
                 <div>
                   {Data?.map((item: SlideProps, idx: number) => {
                     const value = convertDate(item.createdAt);
-                    const type = slugify(item.type, {
-                      lower: true,
-                      locale: "vi",
-                    });
+
                     return (
                       <div
                         className="grid grid-cols-7   text-center border-b py-3 cursor-pointer hover:bg-slate-200 items-center "
@@ -103,9 +98,20 @@ const Slide = ({ Data }: any) => {
                         <div
                           className="col-span-2 text-start truncate text-blue-600 hover:underline"
                           onClick={() =>
-                            router.push(`${WebsiteUrl}/${ype}/${item.url}`)
+                            router.push(
+                              `/${
+                                item.type === "Sản phẩm"
+                                  ? "chi-tiet-san-pham"
+                                  : item.type === "Bài viết" &&
+                                    "chi-tiet-bai-viet"
+                              }/${item.url}`
+                            )
                           }
-                        >{`${WebsiteUrl}/${type}/${item.url}`}</div>
+                        >{`${WebsiteUrl}/${
+                          item.type === "Sản phẩm"
+                            ? "chi-tiet-san-pham"
+                            : item.type === "Bài viết" && "chi-tiet-bai-viet"
+                        }/${item.url}`}</div>
 
                         <div>{value}</div>
                       </div>

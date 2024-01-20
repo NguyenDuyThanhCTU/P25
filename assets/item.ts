@@ -356,16 +356,16 @@ export const AdminPageHeaderItems = [
     icon: "BiHive",
 
     children: [
-      // {
-      //   label: "Đối tác",
-      //   value: "doi-tac",
-      //   icon: "LuGitCompare",
-      // },
-      // {
-      //   label: "Chi Nhánh",
-      //   value: "chi-nhanh",
-      //   icon: "GoGitBranch",
-      // },
+      {
+        label: "Đối tác",
+        value: "doi-tac",
+        icon: "LuGitCompare",
+      },
+      {
+        label: "Chi Nhánh",
+        value: "chi-nhanh",
+        icon: "GoGitBranch",
+      },
     ],
   },
 ];

@@ -10,6 +10,7 @@ import { Metadata } from "next";
 import AdminPage from "@components/admin/AdminPage";
 import SocialMedia from "@components/admin/Comunity/SocialMedia/SocialMedia";
 import Slide from "@components/admin/Comunity/Slide/Slide";
+import Plugins from "@components/admin/Plugins/Plugins";
 
 export const metadata: Metadata = {
   title: "...",
@@ -83,6 +84,10 @@ const AdminHomePage = async ({
     case "kenh-truyen-thong":
       const SocialMediaData = await findById("Config", "SocialMedia");
       componentToRender = <SocialMedia Data={SocialMediaData} />;
+      break;
+    case "doi-tac":
+      const PartnerData = await find("Partner");
+      componentToRender = <Plugins Data={PartnerData} />;
       break;
 
     default:
